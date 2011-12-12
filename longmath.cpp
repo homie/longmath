@@ -30,6 +30,7 @@ bool longNumber::write(void)
   int len = 0;
   int num = number[idx - 1];
   string st;
+  int size = idx; 
 
   while(p != 0){
     int c = 0;
@@ -42,19 +43,20 @@ bool longNumber::write(void)
     p /= 10;
   }
 
-  idx -= 2;
-  while(idx >= 0){
+  size -= 2;
+  while(size >= 0){
     int p = 100, counter = 3;
     char c;
+    int digit = number[size];
 
     while(counter > 0){
-      c = number[idx] / p;
+      c = digit / p;
       st.push_back(c + '0');
-      number[idx] -= c * p;
+      digit -= c * p;
       len++; p = p / 10;
       counter--;
     }
-    idx--;
+    size--;
   }
 
   cout << st << endl;
