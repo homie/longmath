@@ -2,22 +2,6 @@
 
 int main()
 {
-#if 0
-	string number;
-	longNumber foo;
-	cout << "Enter a long number:" << endl;
-	getline(cin, number);
-	foo.read(number);
-	foo.write();
-  longNumber baz(foo);
-  baz.write();
-  longNumber bar;
-
-  bar = foo + baz; 
-
-  bar.write();
-#endif
-
   string number = "0";
   longNumber a, b, c;
   a.read(number); 
@@ -29,9 +13,8 @@ int main()
     c = a + b;
     a = b;
     b = c;
+    c.write();
   }
 
-  c.write();
-
-	return 0;
+  return 0;
 }
